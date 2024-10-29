@@ -661,7 +661,7 @@ void smtp()
 #endif
  
   checkutf8message();
-  if (utf8message && !smtputf8) quit("DConnected to "," but server does not support unicode in email addresses");
+  if (utf8message) quit("DConnected to "," but server does not support unicode in email addresses");
 
   substdio_puts(&smtpto,"MAIL FROM:<");
   substdio_put(&smtpto,sender.s,sender.len);
